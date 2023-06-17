@@ -10,7 +10,19 @@ class MyGUI:
         self.root.config(background='#c51')
         self.root.attributes('-topmost', 1)
 
+        self.menubar = tk.Menu(self.root)
+        self.filemenu1 = tk.Menu(self.menubar, tearoff=0)
+        self.filemenu1.add_command(label='zamknij', command=exit)
+        self.filemenu1.add_separator()
+        self.filemenu1.add_command(label='zamknij z potwierdzeniem', command=self.zamknij)
+        self.menubar.add_cascade(menu=self.filemenu1, label='wyjscia z programu')
 
+        self.filemenu2 = tk.Menu(self.menubar)
+        self.filemenu2.add_command(label='funkcja1', command=exit)
+        self.filemenu2.add_command(label='funkcja2', command=self.zamknij)
+        self.menubar.add_cascade(menu=self.filemenu2, label='testowe')
+
+        self.root.config(menu=self.menubar)
 
         #Labelka
         self.label = tk.Label(self.root, text='wpisz cos:', font=('Arial', 22))
