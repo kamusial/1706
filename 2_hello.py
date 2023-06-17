@@ -12,9 +12,9 @@ root.attributes('-alpha', 0.9)   #przezroczystosc
 root.config(background='Light Blue')  #   #ccc albo #555
 
 message1 = tk.Label(root, text='Siema, pierwszy kod')
-message1.pack()
+message1.pack(ipadx=55, ipady=10, padx=5, pady=5)
 message2 = tk.Label(root, text='Siema, drugi kod')
-message2.pack()
+message2.pack(ipadx=55, ipady=10)
 
 exit_button = tk.Button(root, text='Wyjscie', command=lambda: root.quit())
 exit_button.pack(ipadx=55, ipady=10, expand=True)    #dodatkowe miejsce
